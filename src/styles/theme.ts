@@ -20,8 +20,8 @@ export const theme = extendTheme({
     },
   },
   fonts: {
-    heading: 'Rubik',
-    body: 'Rubik',
+    heading: 'Mulish',
+    body: 'Mulish',
   },
   styles: {
     global: {
