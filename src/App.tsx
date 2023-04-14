@@ -1,10 +1,13 @@
 import {
-  Flex, Heading, Image, 
+  Flex, Heading, Image,
 } from '@chakra-ui/react';
 import logoCat from './assets/logo_cat.gif';
 import { Card } from './componentes/Card';
+import { useCats } from './queries/useCat';
 
 function App() {
+  const { data } = useCats();
+  
   return (
     <Flex align="center" flexDir="column">
       <Flex as="header" w="80vw" h="7.7rem" align="center">
@@ -13,8 +16,9 @@ function App() {
       </Flex>
 
       <Flex w="80vw" h="80vh" justify="space-between" align="center">
-        <Card image="" textButton="Random gif cat" />
-        <Card image="" textButton="Random img cat" />
+        <Card image={`https://cataas.com${data?.url}`} textButton="Random gif cat" />
+
+        <Card image="https://cataas.com/cat/gif" textButton="Random img cat" />
       </Flex>
     </Flex>
   );
